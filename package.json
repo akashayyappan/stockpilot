@@ -1,0 +1,18 @@
+{
+    "name": "stockpilot-boilerplate",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": [
+        "backend/services/*",
+        "frontend"
+    ],
+    "scripts": {
+        "install:all": "npm install",
+        "dev": "concurrently \"npm run dev --prefix backend/services/auth-service\" \"npm run dev --prefix backend/services/inventory-service\" \"npm run dev --prefix backend/services/order-service\" \"npm run dev --prefix backend/services/report-service\" \"npm run dev --prefix backend/services/notification-service\" \"npm start --prefix frontend\"",
+        "build": "npm run build --prefix frontend",
+        "start": "npm run start --prefix frontend"
+    },
+    "devDependencies": {
+        "concurrently": "^8.0.2"
+    }
+}
